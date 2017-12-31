@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from urllib.request import Request,urlopen
 from http.cookiejar import LWPCookieJar
+from bs4 import BeautifulSoup
 import os
-class GoogleSearch:
+# TODO 情強おにいちゃんファクトリからこのクラスを返したい
+class Ggrks:
 
     USER_AGENT = 'Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0)'
 
@@ -19,8 +21,11 @@ class GoogleSearch:
             pass
 
     def search(self, url:str) -> str:
+        '''
+        ググってリンクURLとを返す
+        '''
         request = Request(url)
-        request.add_header('User-Agent', GoogleSearch.USER_AGENT)
+        request.add_header('User-Agent', Ggrks.USER_AGENT)
         # cookie_jar.add_cookie_header(request)
 
         # GET
