@@ -4,6 +4,7 @@ from http.cookiejar import LWPCookieJar
 from bs4 import BeautifulSoup
 import os
 # TODO 情強おにいちゃんファクトリからこのクラスを返したい
+# TODO コンストラクタに検索ワードを渡し、ggrみたいな関数を呼び出す作りにする
 class Ggrks:
 
     USER_AGENT = 'Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0)'
