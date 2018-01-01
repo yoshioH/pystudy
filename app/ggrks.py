@@ -23,7 +23,7 @@ class Ggrks:
 
     def search(self, url:str) -> str:
         '''
-        ググってリンクURLとを返す
+        ググったHTMLを返す
         '''
         request = Request(url)
         request.add_header('User-Agent', Ggrks.USER_AGENT)
