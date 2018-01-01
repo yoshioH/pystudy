@@ -3,6 +3,7 @@ from httplib2 import Http
 from urllib.robotparser import RobotFileParser
 from html.parser import unescape
 from http.cookiejar import LWPCookieJar
+from bs4 import BeautifulSoup
 import ggrks
 
 SAMPLE_URL = 'http://www.google.co.jp/search?q=integer'
