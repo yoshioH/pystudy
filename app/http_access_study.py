@@ -1,18 +1,29 @@
 # -*- coding: utf-8 -*-
 from urllib.robotparser import RobotFileParser
+<<<<<<< HEAD
 from bs4 import BeautifulSoup
 from http.cookiejar import LWPCookieJar
+=======
+from html.parser import unescape
+from http.cookiejar import LWPCookieJar
+from bs4 import BeautifulSoup
+>>>>>>> ec461270892d9ea04d673fe0d71151ed91fc2ea6
 import ggrks
 
 SAMPLE_URL = 'http://www.google.co.jp/search?q=integer'
 
 def http_req():
 
+<<<<<<< HEAD
     gs = ggrks.Ggrks('サターン V')
     html = gs.search()
 
     # with open('get.html', 'wb') as file:
     #     file.write(html)
+=======
+    gs = ggrks.Ggrks()
+    html = gs.search(SAMPLE_URL)
+>>>>>>> ec461270892d9ea04d673fe0d71151ed91fc2ea6
 
     soup = BeautifulSoup(html, 'lxml')
     aList = soup.find_all("a")

@@ -1,20 +1,16 @@
 # -*- coding: utf-8 -*-
 from urllib.request import Request,urlopen
 from http.cookiejar import LWPCookieJar
+from bs4 import BeautifulSoup
 import os
-import urllib
-
-# TODO 情強お兄ちゃんファクトリを作ってそこからインスタンスを返したい。
+# TODO 情強おにいちゃんファクトリからこのクラスを返したい
+# TODO コンストラクタに検索ワードを渡し、ggrみたいな関数を呼び出す作りにする
 class Ggrks:
-    BASE_SEARCH_PATH = 'http://www.google.co.jp/search'
+
     USER_AGENT = 'Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0)'
 
-    def __init__(self, word:str):
-        self.word = word
-        self.resource_path = Ggrks.BASE_SEARCH_PATH + '?q=' + urllib.parse.quote(word)
-        print (self.resource_path)
+    def __init__(self):
         self.home_folder = os.getenv('HOME')
-
         if not self.home_folder:
             self.home_folder = os.getenv('USERHOME')
             if not home_folder:
@@ -25,11 +21,11 @@ class Ggrks:
         except Exception:
             pass
 
-    def search(self) -> str:
-        """
-        simple search from google
-        """
-        request = Request(self.resource_path)
+    def search(self, url:str) -> str:
+        '''
+        ググったHTMLを返す
+        '''
+        request = Request(url)
         request.add_header('User-Agent', Ggrks.USER_AGENT)
         # cookie_jar.add_cookie_header(request)
 

@@ -2,3 +2,5 @@ include/
 Lib/
 Scripts/
 tcl/
+bin/
+
